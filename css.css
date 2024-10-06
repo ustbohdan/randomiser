@@ -5,7 +5,7 @@
     display: flex; /* Use flexbox to arrange items in a row */
     justify-content: center; /* Align items to the left */
     flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-    overflow-x: auto; /* Enable horizontal scrolling if items exceed the width */
+    overflow-x: hidden; /* Enable horizontal scrolling if items exceed the width */
     margin-top: 100px;
 }
 
