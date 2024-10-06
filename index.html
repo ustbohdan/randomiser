@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <ul class="game-list">
+            <li onclick="vote('Counter Strike 2')">
+                <img src="./game-images/cs2.png" alt="cs2">
+            </li>
+            <li onclick="vote('Dota 2')">
+                <img src="./game-images/dota2.jpg" alt="dota2">
+            </li>
+            <li onclick="vote('Valorant')">
+                <img src="./game-images/val.jpg" alt="valorant">
+            </li>
+            <li onclick="vote('New World')">
+                <img src="./game-images/nw.jpg" alt="newworld">
+            </li>
+            <li onclick="vote('Chess')">
+                <img src="./game-images/chess.jpg" alt="chess">
+            </li>
+            <li onclick="vote('Amongus')">
+                <img src="./game-images/amongus.jpg" alt="amongus">
+            </li>
+        </ul>
+    </div>
+
+    <div class='randomBtnAndImgContainer'>
+        <img id='randomiseBtnImage' src="./game-images/randomisebtn.png" state="displayed" onclick="showRandomisedGame()"/>
+        <img id="displayedGameImage" state="hidden" src="" />
+        <element id="loader" state="hidden"></element>
+    </div>
+
+
+    <div class="selected-game" id="selectedGame"></div>
+
+    <script src="js.js"></script>
+</body>
+</html>

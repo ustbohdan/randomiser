@@ -1,0 +1,131 @@
+/* Styling the game list */
+.game-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: center; /* Align items to the left */
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+    overflow-x: auto; /* Enable horizontal scrolling if items exceed the width */
+    margin-top: 100px;
+}
+
+.game-list li {
+    display: flex;
+    flex-direction: column; /* Arrange image and text vertically */
+    align-items: center; /* Center align text under the image */
+    margin: 15px; /* Margin between items */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    flex: 0 0 auto; /* Prevent items from shrinking */
+}
+
+/* Styling for game images */
+.game-list img {
+    max-width: 300px; /* Set a fixed maximum width for images */
+    border-radius: 5px; /* Optional: add rounded corners */
+}
+
+/* Hover effect for images */
+.game-list li:hover img {
+    transform: scale(1.1); /* Scale the image up slightly */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+body {
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+    background-image: url('./game-images/background2.jpg'); /* Specify your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+}
+
+/* Highlight effect */
+.game-list li.selected {
+    transform: scale(1.2); /* Scale up the selected image */
+}
+
+.game-list li.fade {
+    opacity: 0.5; /* Fade out unselected images */
+}
+
+/* Highlight effect */
+.game-list li.selected {
+    transform: scale(1.2); /* Scale up the selected image */
+}
+
+.game-list li.fade {
+    opacity: 0.5; /* Fade out unselected images */
+}
+
+.randomBtnAndImgContainer {
+    position: relative; /* This makes the container the reference for absolute positioning */
+    width: 300px;
+    height: 300px;
+    margin: 0 auto; /* Centers the container horizontally */
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#randomiseBtnImage {
+    position: absolute; /* Absolute positioning relative to the container */
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+}
+
+#randomiseBtnImage:hover {
+    transform: scale(1.1); /* Scale the image up slightly */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+[state='hidden'] {
+    display: none; /* Hide the image by default */
+}
+
+#displayedGameImage {
+    max-width: 300px; /* Set a maximum width for the displayed image */
+    margin: 20px auto; /* Center the image */
+    display: block; /* Ensure it behaves as a block element */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Optional: smooth transition */
+    transform: scale(1.5); /* Make the displayed image larger */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 20;
+}
+
+#loader {
+    width: 48px;
+    height: 48px;
+    display: none;
+    position: absolute;
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
+  #loader::after,
+  #loader::before {
+    content: '';  
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 2s linear infinite;
+  }
+  #loader::after {
+    animation-delay: 1s;
+  }
+  
+  @keyframes animloader {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+}
