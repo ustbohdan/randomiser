@@ -23,6 +23,7 @@
 .game-list img {
     max-width: 300px; /* Set a fixed maximum width for images */
     border-radius: 5px; /* Optional: add rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
 /* Hover effect for images */
@@ -73,6 +74,7 @@ body {
     width: 200px;
     height: 200px;
     z-index: 10;
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
 #randomiseBtnImage:hover {
