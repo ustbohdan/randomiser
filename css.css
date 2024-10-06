@@ -94,6 +94,7 @@ body {
     transform: scale(1.5); /* Make the displayed image larger */
     height: auto; /* Maintain aspect ratio */
     z-index: 20;
+    border-radius: 5px;
 }
 
 #loader {

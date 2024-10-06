@@ -2,6 +2,13 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    const button = document.getElementById('randomiseBtnImage');
+    button.click();
+  }
+});
+
 async function showRandomisedGame() {
   const randomiseBtn = document.getElementById('randomiseBtnImage');
   randomiseBtn.setAttribute('state', 'hidden');
