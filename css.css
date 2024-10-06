@@ -15,7 +15,7 @@
     align-items: center; /* Center align text under the image */
     margin: 15px; /* Margin between items */
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease;
     flex: 0 0 auto; /* Prevent items from shrinking */
 }
 
