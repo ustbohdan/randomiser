@@ -113,25 +113,33 @@ body {
 }
 
 #displayedGameImage {
-    max-width: 300px; /* Set a maximum width for the displayed image */
-    margin: 20px auto; /* Center the image */
+    max-width: 400px; /* Set a maximum width for the displayed image */
+    position: relative;
+    margin-top: 150px;
+    /*margin: 20px auto;  Center the image */
     display: block; /* Ensure it behaves as a block element */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Optional: smooth transition */
     transform: scale(1.5); /* Make the displayed image larger */
     height: auto; /* Maintain aspect ratio */
-    z-index: 20;
+    z-index: 1;
     border-radius: 5px;
 }
 
 #rerollBtnImage {
-    width: 180px;
-    height: 180px;
+    position: relative; /* Position it inside #displayedGameImage */
+    left: 350px;
+    top: 25px;
+    width: 150px;
+    height: 150px;
     display: none; /* Make the image a block element */
     margin: 0 auto; /* Center horizontally */
     max-width: 100%; /* Responsive image */
-    margin-top: 80px;
+    margin-top: 50px;
     transition: transform 0.3s ease;
     cursor: pointer;
+    z-index: 20;
+
+    animation: rotateStep 20s infinite; /* Infinite rotation every 2 seconds */
 }
 
 #rerollBtnImage:hover {
