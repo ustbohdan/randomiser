@@ -58,17 +58,17 @@ async function showRandomisedGame() {
   for (let i = 0; i < 5; i++) {
     for (let image of gameImages) {
       image.classList.add('active');
-      image.style.transform = 'scale(1.1)';
+      image.classList.add('js-transform');
       await delay(delayMs);
-      image.style.transform = 'scale(1)';
+      image.classList.remove('js-transform');
       delayMs += 10;
     }
   }
   for (let i = 0; i <= randomGameIndex; i++) {
-    gameImages[i].style.transform = 'scale(1.1)';
+    gameImages[i].classList.add('js-transform');
     await delay(delayMs);
     if (i < randomGameIndex) {
-      gameImages[i].style.transform = 'scale(1)';
+      gameImages[i].classList.remove('js-transform');
     }
   }
   imageToBeDisplayed.src = imageSources[randomGameIndex];
@@ -110,17 +110,17 @@ async function reroll() {
   for (let i = 0; i < 5; i++) {
     for (let image of gameImages) {
       image.classList.add('active');
-      image.style.transform = 'scale(1.1)';
+      image.classList.add('js-transform');
       await delay(delayMs);
-      image.style.transform = 'scale(1)';
+      image.classList.remove('js-transform');
       delayMs += 10;
     }
   }
   for (let i = 0; i <= randomGameIndex; i++) {
-    gameImages[i].style.transform = 'scale(1.1)';
+    gameImages[i].classList.add('js-transform');
     await delay(delayMs);
     if (i < randomGameIndex) {
-      gameImages[i].style.transform = 'scale(1)';
+      gameImages[i].classList.remove('js-transform');
     }
   }
   displayedImage.src = imageSources[randomGameIndex];
