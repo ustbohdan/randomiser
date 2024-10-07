@@ -18,6 +18,19 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+function toggleGame(clickedImage) {
+  if (clickedImage.classList.contains('active')) {
+    clickedImage.classList.remove('active');
+    clickedImage.classList.add('inactive');
+    return;
+  }
+  if (clickedImage.classList.contains('inactive')) {
+    clickedImage.classList.remove('inactive');
+    clickedImage.classList.add('active');
+    return;
+  }
+}
+
 async function showRandomisedGame() {
   const randomiseBtn = document.getElementById('randomiseBtnImage');
   randomiseBtn.setAttribute('state', 'hidden');
@@ -25,18 +38,37 @@ async function showRandomisedGame() {
   loader.style.display = 'inline-block';
   const imageToBeDisplayed = document.getElementById('displayedGameImage');
 
-  const gameImages = document.querySelectorAll('.game-list li');
-  const imageSources = Array.from(gameImages).map(
-    (item) => item.querySelector('img').src
+  let gameImages = document.querySelectorAll('.game-list li img');
+  const hasActive = Array.from(gameImages).some((img) =>
+    img.classList.contains('active')
   );
+  const hasInactive = Array.from(gameImages).some((img) =>
+    img.classList.contains('inactive')
+  );
+  if (hasActive && hasInactive) {
+    gameImages = Array.from(gameImages).filter((img) =>
+      img.classList.contains('active')
+    );
+  }
+
+  const imageSources = Array.from(gameImages).map((item) => item.src);
 
   const randomGameIndex = Math.floor(Math.random() * gameImages.length);
+  let delayMs = 70;
   for (let i = 0; i < 5; i++) {
     for (let image of gameImages) {
+      image.classList.add('active');
       image.style.transform = 'scale(1.1)';
-      const delayMs = `1${i}0`;
-      await delay(+delayMs);
+      await delay(delayMs);
       image.style.transform = 'scale(1)';
+      delayMs += 10;
+    }
+  }
+  for (let i = 0; i <= randomGameIndex; i++) {
+    gameImages[i].style.transform = 'scale(1.1)';
+    await delay(delayMs);
+    if (i < randomGameIndex) {
+      gameImages[i].style.transform = 'scale(1)';
     }
   }
   imageToBeDisplayed.src = imageSources[randomGameIndex];
@@ -57,19 +89,38 @@ async function reroll() {
   const loader = document.getElementById('loader');
   loader.style.display = 'inline-block';
 
-  const gameImages = document.querySelectorAll('.game-list li');
-  const imageSources = Array.from(gameImages).map(
-    (item) => item.querySelector('img').src
+  let gameImages = document.querySelectorAll('.game-list li img');
+  const hasActive = Array.from(gameImages).some((img) =>
+    img.classList.contains('active')
   );
+  const hasInactive = Array.from(gameImages).some((img) =>
+    img.classList.contains('inactive')
+  );
+  if (hasActive && hasInactive) {
+    gameImages = Array.from(gameImages).filter((img) =>
+      img.classList.contains('active')
+    );
+  }
+
+  const imageSources = Array.from(gameImages).map((item) => item.src);
 
   const randomGameIndex = Math.floor(Math.random() * gameImages.length);
   console.log(randomGameIndex);
+  let delayMs = 60;
   for (let i = 0; i < 5; i++) {
     for (let image of gameImages) {
+      image.classList.add('active');
       image.style.transform = 'scale(1.1)';
-      const delayMs = `1${i}0`;
-      await delay(+delayMs);
+      await delay(delayMs);
       image.style.transform = 'scale(1)';
+      delayMs += 10;
+    }
+  }
+  for (let i = 0; i <= randomGameIndex; i++) {
+    gameImages[i].style.transform = 'scale(1.1)';
+    await delay(delayMs);
+    if (i < randomGameIndex) {
+      gameImages[i].style.transform = 'scale(1)';
     }
   }
   displayedImage.src = imageSources[randomGameIndex];
