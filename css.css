@@ -128,7 +128,7 @@ body {
 #rerollBtnImage {
     position: relative; /* Position it inside #displayedGameImage */
     left: 350px;
-    top: 25px;
+    top: 60px;
     width: 150px;
     height: 150px;
     display: none; /* Make the image a block element */
