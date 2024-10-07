@@ -77,10 +77,30 @@ body {
 #randomiseBtnImage {
     cursor: pointer;
     position: absolute; /* Absolute positioning relative to the container */
-    width: 200px;
+    width: 180px;
     height: 200px;
     z-index: 10;
     transition: transform 0.3s ease; /* Smooth transition */
+
+    animation: rotateStep 15s infinite; /* Infinite rotation every 2 seconds */
+}
+
+@keyframes rotateStep {
+    0% {
+        transform: rotate(0deg); /* Initial position */
+    }
+    25% {
+        transform: rotate(90deg); /* After 2 seconds */
+    }
+    50% {
+        transform: rotate(180deg); /* After 4 seconds */
+    }
+    75% {
+        transform: rotate(270deg); /* After 6 seconds */
+    }
+    100% {
+        transform: rotate(360deg); /* After 8 seconds (complete rotation) */
+    }
 }
 
 #randomiseBtnImage:hover {
@@ -104,6 +124,8 @@ body {
 }
 
 #rerollBtnImage {
+    width: 180px;
+    height: 180px;
     display: none; /* Make the image a block element */
     margin: 0 auto; /* Center horizontally */
     max-width: 100%; /* Responsive image */
