@@ -26,7 +26,7 @@
 }
 
 .game-list img.js-transform {
-    transform: scale(1.1); /* Scale up when class is added */
+    transform: scale(1.07); /* Scale up when class is added */
 }
 
 .game-list img.active {
@@ -36,19 +36,20 @@
 .game-list li:hover img {
     transform: scale(1.1); /* Scale the image up slightly */
     transition: transform 0.3s ease; /* Smooth transition */
+    filter: brightness(1.2);
 }
 
 body {
     overflow-y: hidden;
     margin: 0; /* Remove default margin */
     height: 100vh; /* Full viewport height */
-    background-image: url('./game-images/background2.jpg'); /* Specify your background image */
+    background-image: url('./game-images/animeBack.gif'); /* Specify your background image */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the background image */
 }
 
 .game-list li.selected {
-    transform: scale(1.2); /* Scale up the selected image */
+    transform: scale(1.1); /* Scale up the selected image */
 }
 
 .game-list li.fade {
@@ -56,7 +57,7 @@ body {
 }
 
 .game-list li.selected {
-    transform: scale(1.2); /* Scale up the selected image */
+    transform: scale(1.1); /* Scale up the selected image */
 }
 
 .game-list li.fade {
@@ -77,6 +78,7 @@ body {
 #randomiseBtnImage {
     cursor: pointer;
     position: absolute; /* Absolute positioning relative to the container */
+    margin-top: 100px;
     width: 180px;
     height: 200px;
     z-index: 10;
@@ -106,6 +108,7 @@ body {
 #randomiseBtnImage:hover {
     transform: scale(1.1); /* Scale the image up slightly */
     transition: transform 0.3s ease; /* Smooth transition */
+    filter: brightness(1.2);
 }
 
 [state='hidden'] {
@@ -145,28 +148,27 @@ body {
 #rerollBtnImage:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
+    filter: brightness(1.2);
 }
 
 #loader {
     width: 48px;
     height: 48px;
     display: none;
-    position: absolute;
-    margin-right: 50px;
-    margin-bottom: 20px;
   }
   #loader::after,
   #loader::before {
     content: '';  
     box-sizing: border-box;
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    border: 2px solid #FFF;
+    border: 10px solid #ffffff;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 25px;
+    top: 80px;
     animation: animloader 2s linear infinite;
+    opacity: 0;
   }
   #loader::after {
     animation-delay: 1s;
