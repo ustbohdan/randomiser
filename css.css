@@ -45,7 +45,7 @@
   }
 
 .game-list img {
-    opacity: 0.5; /* Make images half transparent (faded) */
+    opacity: 0.6; /* Make images half transparent (faded) */
     max-width: 400px; /* Set a fixed maximum width for images */
     border-radius: 5px; /* Optional: add rounded corners */
     transition: transform 0.3s ease; /* Smooth transition */
