@@ -86,7 +86,7 @@ async function showRandomisedGame() {
   imageToBeDisplayed.src = imageSources[randomGameIndex];
   imageToBeDisplayed.classList.remove('hidden');
   imageToBeDisplayed.style.opacity = 1; // Make sure it is fully visible
-  imageToBeDisplayed.style.transform = 'scale(2)';
+  imageToBeDisplayed.style.transform = 'scale(1.8)';
   loader.style.display = 'none';
 
   const rerollBtn = document.getElementById('rerollBtnImage');
@@ -140,7 +140,7 @@ async function reroll() {
   displayedImage.src = imageSources[randomGameIndex];
   displayedImage.classList.remove('hidden');
   displayedImage.style.opacity = 1; // Make sure it is fully visible
-  displayedImage.style.transform = 'scale(2)';
+  displayedImage.style.transform = 'scale(1.8)';
   loader.style.display = 'none';
   rerollBtn.style.display = 'block';
 }
