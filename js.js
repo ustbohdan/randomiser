@@ -2,6 +2,7 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/*
 document.addEventListener('keydown', function (event) {
   const loader = document.getElementById('loader');
   if (loader.getAttribute('style') !== 'display: inline-block;') {
@@ -17,6 +18,7 @@ document.addEventListener('keydown', function (event) {
     }
   }
 });
+*/
 
 function toggleGame(clickedImage) {
   if (clickedImage.classList.contains('active')) {
