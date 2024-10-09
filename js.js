@@ -57,13 +57,15 @@ async function showRandomisedGame() {
 
   const randomGameIndex = Math.floor(Math.random() * gameImages.length);
   let delayMs = 70;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < Math.floor(Math.random() * gameImages.length); i++) {
     for (let image of gameImages) {
       image.classList.add('active');
       image.classList.add('js-transform');
       await delay(delayMs);
       image.classList.remove('js-transform');
-      delayMs += 10;
+      if (delayMs < 120) {
+        delayMs += 10;
+      }
     }
   }
   for (let i = 0; i <= randomGameIndex; i++) {
@@ -109,13 +111,15 @@ async function reroll() {
   const randomGameIndex = Math.floor(Math.random() * gameImages.length);
   console.log(randomGameIndex);
   let delayMs = 60;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < Math.floor(Math.random() * gameImages.length); i++) {
     for (let image of gameImages) {
       image.classList.add('active');
       image.classList.add('js-transform');
       await delay(delayMs);
       image.classList.remove('js-transform');
-      delayMs += 10;
+      if (delayMs < 120) {
+        delayMs += 10;
+      }
     }
   }
   for (let i = 0; i <= randomGameIndex; i++) {
