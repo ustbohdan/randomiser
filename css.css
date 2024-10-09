@@ -130,7 +130,7 @@ body {
 #randomiseBtnImage:hover {
     transform: scale(1.1); /* Scale the image up slightly */
     transition: transform 0.3s ease; /* Smooth transition */
-    filter: brightness(1.2);
+    filter: brightness(1.7);
 }
 
 [state='hidden'] {
@@ -170,7 +170,7 @@ body {
 #rerollBtnImage:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    filter: brightness(1.2);
+    filter: brightness(1.7);
 }
 
 #loader {
