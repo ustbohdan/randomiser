@@ -207,3 +207,103 @@ body {
       opacity: 0;
     }
 }
+
+.search {
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    
+}
+
+input {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    left: 50px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+input::placeholder {
+    font-size: 15px;
+    line-height: 1.5;
+    color: black;
+
+}
+
+input:focus::placeholder {
+    opacity: 0; /* Hide placeholder text */
+}
+
+input:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    filter: brightness(1.1);
+    background-color: rgb(220, 220, 220)
+}
+
+#disableAllBtn {
+    position: absolute;
+    margin-top: 80px;
+    left: 50px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#disableAllBtn:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    filter: brightness(1.1);
+    background-color: rgb(220, 220, 220)
+}
+
+#communicationIcon {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+}
+
+#communicationIcon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    filter: brightness(1.2);
+    opacity: 1;
+}
+
+.tooltip {
+    visibility: hidden;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    right: -25px;
+    bottom: 90px;
+    width: 280px;
+    height: 100px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+
+.tooltip b {
+    opacity: 1;
+}
+
+.show-tooltip .tooltip {
+    visibility: visible;
+}

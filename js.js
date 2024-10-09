@@ -33,6 +33,14 @@ function toggleGame(clickedImage) {
   }
 }
 
+function deactivateAllGames() {
+  const gameImages = document.querySelectorAll('.game-list li img');
+  for (let image of gameImages) {
+    image.classList.replace('active', 'inactive');
+    image.classList.remove('js-transform');
+  }
+}
+
 async function showRandomisedGame() {
   const randomiseBtn = document.getElementById('randomiseBtnImage');
   randomiseBtn.setAttribute('state', 'hidden');
@@ -136,3 +144,26 @@ async function reroll() {
   loader.style.display = 'none';
   rerollBtn.style.display = 'block';
 }
+
+function sendEmail() {
+  // Predefined email details
+  const recipient = 'example@example.com'; // Replace with the recipient's email
+  const subject = 'Hello from JavaScript!'; // Email subject
+  const body = 'This is a predefined message.'; // Email body content
+
+  // Construct mailto link
+  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  // Open the user's default email client
+  window.location.href = mailtoLink;
+}
+
+document
+  .getElementById('communicationIcon')
+  .addEventListener('click', function () {
+    document
+      .getElementById('communicationBtn')
+      .classList.toggle('show-tooltip');
+  });

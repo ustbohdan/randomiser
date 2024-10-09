@@ -60,6 +60,24 @@
             </li>
         </ul>
     </div>
+    
+    <div class='search'>
+        <input placeholder='Знайти гру'>
+        <button id='disableAllBtn' onclick='deactivateAllGames()'>Інактивувати всі</button>
+    </div>
+
+    <div class="tooltip-container" id='communicationBtn'>
+        <img src="./game-images/questionmark.png" onclick="sendEmail()" id='communicationIcon' href="mailto:EMAILADDRESS@test.test" alt="">
+        <div class="tooltip">
+            <b>
+                Зареквестити додавання гри: <br>
+                &nbsp;&nbsp;&nbsp;Discord: uuuus87988 <br>
+                <p>
+                    п.с Дімон, хейтерські коменти не писати 
+                </p>
+            </b>
+        </div>
+    </div>
 
     <div class='randomBtnAndImgContainer'>
         <img id='randomiseBtnImage' src="./game-images/randomisebtnlight.png" state="displayed" onclick="showRandomisedGame()"/>
