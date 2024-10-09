@@ -1,14 +1,50 @@
+.container {
+    display: flex;
+}
+
+.left-part {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.body {
+    width: 100%;
+    position: relative;
+}
+
+.footer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
 .game-list {
     list-style-type: none; /* Remove default list styling */
     padding: 0;
-    display: flex; /* Use flexbox to arrange items in a row */
-    justify-content: center; /* Align items to the left */
-    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-    overflow-x: auto; /* Enable horizontal scrolling if items exceed the width */
-    margin-top: 75px;
-    scroll-snap-align: start;
-    justify-content: flex-start; /* Align item at the start when scrolling */
-    padding-bottom: 20px;
+    display: flex; /* Use flexbox to arrange items */
+    flex-direction: row; /* Arrange items in rows */
+    flex-wrap: wrap; /* Allow items to wrap into new rows */
+    justify-content: flex-start; /* Align items to the left */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: none; /* Enable vertical scrolling */
+    height: calc(100vh - 75px); /* Full viewport height minus margin */
+    width: 100%; /* Ensure it takes the full width of the container */
+    max-width: 1000px; /* Limit the maximum width to avoid horizontal scroll */
+    scroll-snap-type: y mandatory; /* Enable scroll snapping vertically */
 }
 
 .game-list li {
@@ -18,35 +54,44 @@
     margin: 15px; /* Margin between items */
     cursor: pointer;
     transition: transform 0.3s ease;
-    flex: 0 0 auto; /* Prevent items from shrinking */
+    flex: 0 0 calc(30%); /* Two columns with space for margin */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-/* width */
+@media (max-width: 1800px) {
+    .game-list li {
+        flex: 0 0 calc(50% - 30px); /* Two columns when the screen width is below 900px */
+    }
+}
+
+/* Media query for very narrow screens (1 column) */
+@media (max-width: 1200px) {
+    .game-list li {
+        flex: 0 0 calc(100% - 30px); /* Full width for each item when the screen width is below 600px */
+    }
+}
+
+/* Scrollbar styles */
 ::-webkit-scrollbar {
-    width: auto;
-    height: 8px;
-    margin-top: 25px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #c4c4c4;
-  }
+    width: 3px; /* Width of the vertical scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: none; /* Track background */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c4c4c4; /* Thumb color on hover */
+}
 
 .game-list img {
     opacity: 0.6; /* Make images half transparent (faded) */
-    max-width: 400px; /* Set a fixed maximum width for images */
+    max-width: 100%; /* Set a fixed maximum width for images */
     border-radius: 5px; /* Optional: add rounded corners */
     transition: transform 0.3s ease; /* Smooth transition */
 }
@@ -67,7 +112,7 @@
 }
 
 body {
-    overflow-y: hidden;
+    /*overflow-y: hidden; /* Prevent body overflow */
     margin: 0; /* Remove default margin */
     height: 100vh; /* Full viewport height */
     background-image: url('./game-images/animeBack.gif'); /* Specify your background image */
@@ -87,8 +132,7 @@ body {
     opacity: 0.5; /* Fade out unselected images */
 }
 
-.randomBtnAndImgContainer {
-    position: relative; /* This makes the container the reference for absolute positioning */
+.randomBtnAndImgContainer { /* This makes the container the reference for absolute positioning */
     width: 300px;
     height: 300px;
     margin: 0 auto; /* Centers the container horizontally */
@@ -96,12 +140,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #randomiseBtnImage {
     cursor: pointer;
-    position: absolute; /* Absolute positioning relative to the container */
-    margin-top: 100px;
+      /* Absolute positioning relative to the container */
     width: 180px;
     height: 200px;
     z-index: 10;
@@ -141,7 +185,7 @@ body {
 #displayedGameImage {
     max-width: 400px; /* Set a maximum width for the displayed image */
     position: relative;
-    margin-top: 150px;
+    margin-top: 220px;
     /*margin: 20px auto;  Center the image */
     display: block; /* Ensure it behaves as a block element */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Optional: smooth transition */
@@ -188,8 +232,8 @@ body {
     border-radius: 50%;
     border: 10px solid #ffffff;
     position: absolute;
-    left: 25px;
-    top: 80px;
+    left: 27px;
+    top: 25px;
     animation: animloader 2s linear infinite;
     opacity: 0;
   }
@@ -209,29 +253,29 @@ body {
 }
 
 .search {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the right */
     font-size: medium;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    
 }
 
 input {
-    position: absolute;
     background-color: rgba(255, 255, 255, 0.5);
-    margin-top: 20px;
-    left: 50px;
+    margin-top: 30px;
     width: 200px;
     height: 40px;
     border-radius: 10px;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 input::placeholder {
     font-size: 15px;
     line-height: 1.5;
     color: black;
-
 }
 
 input:focus::placeholder {
@@ -246,9 +290,8 @@ input:hover {
 }
 
 #disableAllBtn {
-    position: absolute;
-    margin-top: 80px;
-    left: 50px;
+    margin-top: 20px;
+    right: 50px;
     width: 120px;
     height: 30px;
     border-radius: 10px;
@@ -265,13 +308,14 @@ input:hover {
 }
 
 #communicationIcon {
-    position: absolute;
-    right: 40px;
-    bottom: 20px;
     cursor: pointer;
     width: 100px;
     height: 100px;
     opacity: 0.7;
+    position: relative;
+    display: flex;
+    right: -200px;
+
 }
 
 #communicationIcon:hover {
@@ -286,24 +330,30 @@ input:hover {
     transform: translateX(-50%);
     transition: opacity 0.3s;
     background-color: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    right: -25px;
-    bottom: 90px;
-    width: 280px;
+    width: 285px;
     height: 100px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-top-right-radius: 25px;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.5;
-    padding-left: 10px;
-    padding-top: 8px;
+    position: relative;
+    border-radius: 15px;
+    right: 40px;
+    bottom: 50px
 }
 
 .tooltip b {
     opacity: 1;
+    position: relative;
+    left: 10px;
+    top: 5px;
 }
 
 .show-tooltip .tooltip {
     visibility: visible;
+}
+
+.tooltip-container {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    margin-bottom: 30px;
 }

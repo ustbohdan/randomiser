@@ -59,37 +59,40 @@
                 <img src="./game-images/apex.jpg" class='inactive' alt="apex" onclick="toggleGame(this)">
             </li>
         </ul>
-    </div>
-    
-    <div class='search'>
-        <input placeholder='Знайти гру'>
-        <button id='disableAllBtn' onclick='deactivateAllGames()'>Інактивувати всі</button>
-    </div>
-
-    <div class="tooltip-container" id='communicationBtn'>
-        <img src="./game-images/questionmark.png" onclick="sendEmail()" id='communicationIcon' href="mailto:EMAILADDRESS@test.test" alt="">
-        <div class="tooltip">
-            <b>
-                Зареквестити додавання гри: <br>
-                &nbsp;&nbsp;&nbsp;Discord: uuuus87988 <br>
-                <p>
-                    п.с Дімон, хейтерські коменти не писати 
-                </p>
-            </b>
+        <div class='left-part'>
+            <div class='header'>
+                <div class='search'>
+                    <input placeholder='Знайти гру'>
+                    <button id='disableAllBtn' onclick='deactivateAllGames()'>Інактивувати всі</button>
+                </div>
+            </div>
+            <div class='body'>
+                <div class='randomBtnAndImgContainer'>
+                    <img id='randomiseBtnImage' src="./game-images/randomisebtnlight.png" state="displayed" onclick="showRandomisedGame()"/>
+                    <img id="displayedGameImage" src="" />
+                    <element id="loader"></element>
+                </div>
+            
+                <div class='reroll'>
+                    <img id='rerollBtnImage' src="./game-images/rerolllight.png" state="displayed" onclick="reroll()"/>
+                </div>
+                <div class="selected-game" id="selectedGame"></div>
+            </div>
+            <div class='footer'>
+                <div class="tooltip-container" id='communicationBtn'>
+                    <img src="./game-images/questionmark.png" onclick="sendEmail()" id='communicationIcon' href="mailto:EMAILADDRESS@test.test" alt="">
+                    <div class="tooltip">
+                        <b>
+                            Зареквестити чейнжі: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Discord: uuuus87988 <br>
+                        </b>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class='randomBtnAndImgContainer'>
-        <img id='randomiseBtnImage' src="./game-images/randomisebtnlight.png" state="displayed" onclick="showRandomisedGame()"/>
-        <img id="displayedGameImage" src="" />
-        <element id="loader"></element>
-    </div>
-
-    <div class='reroll'>
-        <img id='rerollBtnImage' src="./game-images/rerolllight.png" state="displayed" onclick="reroll()"/>
-    </div>
-
-    <div class="selected-game" id="selectedGame"></div>
+    
+    
 
     <script src="js.js"></script>
 </body>
