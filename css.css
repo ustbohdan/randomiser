@@ -57,6 +57,7 @@
 
 .game-list img.active {
     opacity: 1; /* Full brightness */
+    filter: brightness(1.2);
 }
 
 .game-list li:hover img {
