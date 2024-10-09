@@ -136,7 +136,6 @@ body {
     width: 300px;
     height: 300px;
     margin: 0 auto; /* Centers the container horizontally */
-    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,7 +256,7 @@ body {
     display: flex;
     flex-direction: column;
     top: 0; /* Align to the top */
-    left: 0; /* Align to the right */
+    left: 20px; /* Align to the right */
     font-size: medium;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
@@ -301,6 +300,75 @@ input:hover {
 }
 
 #disableAllBtn:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    filter: brightness(1.1);
+    background-color: rgb(220, 220, 220)
+}
+
+.choises {
+    flex-direction: column;
+    top: 0; /* Align to the top */
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+#randomiseGame {
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 30px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 8px;
+    margin-right: 40px;
+    font-size: large;
+    transform: scale(1.2);
+}
+
+#randomiseGame.js-transform {
+    transform: scale(1.07); /* Scale up when class is added */
+}
+
+#randomiseGame.active {
+    opacity: 1; /* Full brightness */
+    filter: brightness(1.2);
+}
+
+#randomiseGame:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    filter: brightness(1.1);
+    background-color: rgb(220, 220, 220)
+}
+
+#randomiseTeam {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 30px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 8px;
+    font-size: large;
+}
+
+#randomiseTeam.js-transform {
+    transform: scale(1.07); /* Scale up when class is added */
+}
+
+#randomiseTeam.active {
+    opacity: 1; /* Full brightness */
+    filter: brightness(1.2);
+}
+
+#randomiseTeam:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
     filter: brightness(1.1);
